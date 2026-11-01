@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #05060b;
+  --violet: #8b5cf6;
+  --cyan: #22d3ee;
+  --lime: #a3e635;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-prime-bg text-prime-text font-sans antialiased;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.55);
+  color: #fff;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tight;
+}
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-prime-cyan ring-offset-2 ring-offset-prime-bg;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #05060b; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #22d3ee);
+  border-radius: 999px;
+  border: 2px solid #05060b;
+}
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .grad-text {
+    background: linear-gradient(100deg, #a78bfa 0%, #22d3ee 45%, #a3e635 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 7s linear infinite;
+  }
+
+  .grad-text-static {
+    background: linear-gradient(100deg, #a78bfa, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .glass-strong {
+    background: rgba(10, 12, 22, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    height: 1px;
+  }
+
+  .preserve-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .perspective-1000 { perspective: 1000px; }
+  .perspective-1400 { perspective: 1400px; }
+  .perspective-2000 { perspective: 2000px; }
+}
+
+/* ---------- Background grid / noise ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 85%);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Neon border (animated conic) ---------- */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.neon-border {
+  position: relative;
+}
+.neon-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--angle), transparent 0 60%, #8b5cf6 75%, #22d3ee 90%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-angle 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-angle { to { --angle: 360deg; } }
+
+/* ---------- Marquee ---------- */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee-left 50s linear infinite; will-change: transform; }
+.marquee-row:hover .marquee-track { animation-play-state: paused; }
+
+/* ---------- 3D cube ---------- */
+@keyframes cube-spin {
+  from { transform: rotateX(-18deg) rotateY(0deg); }
+  to { transform: rotateX(-18deg) rotateY(360deg); }
+}
+.cube { animation: cube-spin 22s linear infinite; }
+
+/* ---------- Typing caret ---------- */
+.caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: #22d3ee;
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Pause infinite animations when the tab is hidden */
+html.page-hidden *,
+html.page-hidden *::before,
+html.page-hidden *::after {
+  animation-play-state: paused !important;
+}
+
+/* Range slider */
+input[type="range"].prime-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8b5cf6 var(--p, 50%), rgba(255,255,255,0.1) var(--p, 50%));
+  outline: none;
+}
+input[type="range"].prime-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; border: 4px solid #22d3ee;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+  cursor: pointer;
+}
+input[type="range"].prime-range::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #fff; border: 4px solid #22d3ee;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track, .cube { animation: none !important; }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
