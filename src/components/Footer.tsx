@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <Link href="#home" className="mb-4 flex w-fit items-center gap-3">
               <LogoMark className="h-10 w-10" />
-              <span className="font-display text-2xl font-bold">PrimeAutoTech</span>
+              <span className="font-display text-2xl font-bold">Portfolio</span>
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-prime-muted">{SITE_TAGLINE}</p>
             <button
@@ -45,11 +45,11 @@ export default function Footer() {
         </div>
 
         <div aria-hidden="true" className="select-none text-center font-display text-[17vw] font-bold leading-[0.8] tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.09)] md:text-[13vw]">
-          PrimeAutoTech
+          PORTFOLIO
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-xs text-prime-muted md:flex-row">
-          <p>© 2026 PrimeAutoTech. All rights reserved.</p>
+          <p>© 2026 Portfolio. All rights reserved.</p>
           <p className="flex items-center gap-2 font-mono">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-prime-lime opacity-70" />

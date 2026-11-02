@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 
-/** PrimeAutoTech mark: a hexagon core with an orbiting node. */
+/** Portfolio mark: a hexagon core with an orbiting node. */
 export default function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={cn("h-8 w-8", className)} aria-hidden="true">

@@ -47,9 +47,9 @@ function buildParams(kind: FormKind, f: MailFields) {
   const label = kind === "consultation" ? "Consultation Booking" : "Contact Form";
   return {
     to_email: CONTACT_EMAIL,
-    to_name: "PrimeAutoTech",
+    to_name: "Portfolio Team",
     form_type: label,
-    subject: `[PrimeAutoTech] ${label} — ${f.name}`,
+    subject: `[Portfolio] ${label} — ${f.name}`,
     from_name: f.name,
     from_email: f.email,
     reply_to: f.email,

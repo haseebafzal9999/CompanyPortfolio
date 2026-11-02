@@ -146,7 +146,7 @@ export const REVIEWS = [
     name: "Daniel Reeves",
     role: "COO",
     company: "Summit Logistics Group",
-    text: "PrimeAutoTech rebuilt our dispatch workflow and automated the follow-ups our team used to handle by hand. What once took most of the morning now runs on its own, with a weekly report showing exactly what went out and what came back. Communication was fast and clear from start to finish.",
+    text: "Our team rebuilt our dispatch workflow and automated the follow-ups we used to handle by hand. What once took most of the morning now runs on its own, with a weekly report showing exactly what went out and what came back. Communication was fast and clear from start to finish.",
     rating: 5,
   },
   {
@@ -162,7 +162,7 @@ export const REVIEWS = [
     name: "Tyler Morgan",
     role: "VP of Sales",
     company: "Clearview Realty",
-    text: "We wanted AI agents that could qualify inbound leads after hours. PrimeAutoTech built exactly that, and the handoff is seamless — the system books meetings and updates our CRM before we even look at it. Reliable, well documented, and the team still checks in to make sure everything runs smoothly.",
+    text: "We wanted AI agents that could qualify inbound leads after hours. The team built exactly that, and the handoff is seamless — the system books meetings and updates our CRM before we even look at it. Reliable, well documented, and they still check in to make sure everything runs smoothly.",
     rating: 5,
   },
   {
@@ -178,7 +178,7 @@ export const REVIEWS = [
     name: "Chris Baldwin",
     role: "Managing Partner",
     company: "Harborview Financial",
-    text: "We hired PrimeAutoTech to build a client portal with automated document collection, and the final product was far more polished than we expected. It sends reminders, flags missing documents, and syncs everything to our CRM. Professional from kickoff to launch.",
+    text: "We hired the team to build a client portal with automated document collection, and the final product was far more polished than we expected. It sends reminders, flags missing documents, and syncs everything to our CRM. Professional from kickoff to launch.",
     rating: 5,
   },
 ];

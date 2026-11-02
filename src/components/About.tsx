@@ -63,7 +63,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: EASE }}
             className="mb-10 max-w-xl text-lg leading-relaxed text-prime-muted"
           >
-            PrimeAutoTech focuses on building efficient, scalable digital systems that connect web applications, APIs, communication platforms, automation tools, and AI.
+            We focus on building efficient, scalable digital systems that connect web applications, APIs, communication platforms, automation tools, and AI.
           </motion.p>
 
           <motion.div

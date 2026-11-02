@@ -10,7 +10,7 @@ import ConsultationProvider from "@/components/ConsultationProvider";
 import ScrollProgress from "@/components/ScrollProgress";
 import CursorGlow from "@/components/CursorGlow";
 import SideNav from "@/components/SideNav";
-import PrimeBot from "@/components/PrimeBot";
+import ChatBot from "@/components/ChatBot";
 import { SITE_URL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "ElevenLabs",
     "Automation Agency",
     "Software Company",
-    "PrimeAutoTech",
+
   ],
   robots: {
     index: true,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PrimeAutoTech — AI Automation & Custom Software Development" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Portfolio — AI Automation & Custom Software Development" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -115,7 +115,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <SideNav />
           <main className="relative z-[2] w-full max-w-full overflow-x-clip">{children}</main>
           <Footer />
-          <PrimeBot />
+          <ChatBot />
         </ConsultationProvider>
       </body>
     </html>

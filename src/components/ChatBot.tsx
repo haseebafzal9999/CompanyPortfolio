@@ -53,13 +53,13 @@ function answer(q: string): { text: string; actions?: Action[] } {
   }
 }
 
-export default function PrimeBot() {
+export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [typing, setTyping] = useState(false);
   const [nudge, setNudge] = useState(false);
   const [input, setInput] = useState("");
   const [msgs, setMsgs] = useState<Msg[]>([
-    { id: 0, from: "bot", text: "Hi, I'm PrimeBot 👋 Ask me about our services, projects or process." },
+    { id: 0, from: "bot", text: "Hi, I'm your assistant 👋 Ask me about our services, projects or process." },
   ]);
   const idRef = useRef(1);
   const endRef = useRef<HTMLDivElement>(null);
@@ -113,7 +113,7 @@ export default function PrimeBot() {
             style={{ transformPerspective: 900, transformOrigin: "bottom right" }}
             className="glass-strong flex h-[480px] max-h-[calc(100dvh-110px)] w-[calc(100vw-40px)] max-w-[370px] flex-col overflow-hidden rounded-3xl shadow-[0_30px_100px_-20px_rgba(99,102,241,0.7)]"
             role="dialog"
-            aria-label="PrimeBot assistant"
+            aria-label="Portfolio assistant"
           >
             <div className="flex items-center justify-between border-b border-white/10 bg-gradient-to-r from-prime-violet/30 to-prime-cyan/20 px-4 py-3.5">
               <div className="flex items-center gap-3">
@@ -122,7 +122,7 @@ export default function PrimeBot() {
                   <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-prime-bg bg-prime-lime" />
                 </span>
                 <div>
-                  <p className="font-display text-sm font-bold">PrimeBot</p>
+                  <p className="font-display text-sm font-bold">Assistant</p>
                   <p className="font-mono text-[10px] uppercase tracking-wider text-prime-lime">online</p>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function PrimeBot() {
                 }}
                 className="flex items-center gap-2"
               >
-                <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask something..." aria-label="Message PrimeBot" className="flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-prime-muted/60 focus:border-prime-cyan/60" />
+                <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask something..." aria-label="Message assistant" className="flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-prime-muted/60 focus:border-prime-cyan/60" />
                 <button type="submit" aria-label="Send" disabled={typing} className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-prime-violet to-prime-cyan disabled:opacity-60">
                   <Send className="h-4 w-4" />
                 </button>
@@ -190,7 +190,7 @@ export default function PrimeBot() {
         <AnimatePresence>
           {nudge && !open && (
             <motion.div initial={{ opacity: 0, x: 10, scale: 0.9 }} animate={{ opacity: 1, x: 0, scale: 1 }} exit={{ opacity: 0, x: 10 }} className="glass-strong absolute bottom-2 right-16 hidden whitespace-nowrap rounded-xl px-4 py-2.5 text-xs sm:block">
-              Need help? Ask <b className="text-prime-cyan">PrimeBot</b> ✨
+              Need help? Ask our <b className="text-prime-cyan">assistant</b> ✨
             </motion.div>
           )}
         </AnimatePresence>

@@ -109,7 +109,7 @@ export default function WhyUs() {
             title={
               <>
                 WHY BUSINESSES <br />
-                <span className="grad-text">TRUST PRIMEAUTOTECH</span>
+                <span className="grad-text">TRUST US</span>
               </>
             }
             sub="We don't just write code; we build scalable engines that drive your business forward. Here is why our clients partner with us for the long term."

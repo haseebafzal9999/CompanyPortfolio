@@ -39,10 +39,10 @@ export default function Navbar() {
             scrolled ? "glass-strong shadow-[0_10px_50px_-12px_rgba(99,102,241,0.45)]" : "border border-transparent bg-transparent"
           )}
         >
-          <Link href="#home" className="group flex items-center gap-2.5" aria-label="PrimeAutoTech home">
+          <Link href="#home" className="group flex items-center gap-2.5" aria-label="Portfolio home">
             <LogoMark className="h-8 w-8 transition-transform duration-500 group-hover:rotate-[60deg]" />
             <span className="font-display text-lg font-bold tracking-tight">
-              Prime<span className="grad-text-static">AutoTech</span>
+              <span className="grad-text-static">Portfolio</span>
             </span>
           </Link>
 
@@ -102,7 +102,7 @@ export default function Navbar() {
             <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
             <div className="relative flex items-center justify-between border-b border-white/10 p-5">
               <span className="flex items-center gap-2.5 font-display text-lg font-bold">
-                <LogoMark className="h-8 w-8" /> PrimeAutoTech
+                <LogoMark className="h-8 w-8" /> Portfolio
               </span>
               <button onClick={() => setMenu(false)} className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5" aria-label="Close Menu">
                 <X className="h-5 w-5" />

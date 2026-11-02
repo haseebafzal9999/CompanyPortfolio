@@ -1,4 +1,4 @@
-# PrimeAutoTech
+# Portfolio
 
 AI automation & custom software portfolio — Next.js 14 · React Three Fiber (3D) · Framer Motion · Tailwind CSS · EmailJS.
 
@@ -18,7 +18,7 @@ Requires Node.js 18.18 or newer.
 ## What's inside
 
 - 3D hero (React Three Fiber core + orbit rings + particles), 3D tool carousel, 3D tilt cards, 3D cube, 3D testimonial coverflow
-- Interactive automation pipeline (auto-runs, click any step), live terminal, ROI calculator, PrimeBot assistant
+- Interactive automation pipeline (auto-runs, click any step), live terminal, ROI calculator, chatbot assistant
 - 6 demo projects with videos (hover preview, full player modal with next/previous), filters and detail modals
 - Consultation booking + contact form — both delivered to **haseebafzl99999@gmail.com** through EmailJS
 
@@ -37,7 +37,7 @@ The forms work **before** setup too (they open the visitor's mail app addressed 
    - **Content:**
 
      ```
-     New {{form_type}} from the PrimeAutoTech website
+     New {{form_type}} from the Portfolio website
 
      Name: {{from_name}}
      Email: {{from_email}}
